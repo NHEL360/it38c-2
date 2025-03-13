@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2025 at 08:28 AM
+-- Generation Time: Mar 13, 2025 at 08:48 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `it38-lab`
+-- Database: `it38c-2`
 --
 
 -- --------------------------------------------------------
@@ -42,6 +42,18 @@ INSERT INTO `login_logs` (`login_id`, `user_id`, `login_time`) VALUES
 (2, 1, '2025-02-10 20:12:26'),
 (3, 2, '2025-02-10 20:14:55'),
 (4, 1, '2025-02-10 20:15:01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_attendance`
+--
+
+CREATE TABLE `tbl_attendance` (
+  `attendance_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `attendance_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -77,6 +89,12 @@ ALTER TABLE `login_logs`
   ADD PRIMARY KEY (`login_id`);
 
 --
+-- Indexes for table `tbl_attendance`
+--
+ALTER TABLE `tbl_attendance`
+  ADD PRIMARY KEY (`attendance_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -91,6 +109,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `login_logs`
   MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_attendance`
+--
+ALTER TABLE `tbl_attendance`
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
